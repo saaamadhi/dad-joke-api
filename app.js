@@ -15,8 +15,8 @@ const randomizer = (max) => {
 
 rl.question('Please, enter search term: ', (searchValue) => {
     rl.question('Do you want to see the most popular joke?[y/n]\n', (answer) => {
-        if(answer !== 'y' && answer !== 'n') return;
-        if(searchValue === '') return;
+        if(answer !== 'y' && answer !== 'n') rl.close();
+        if(searchValue === '') rl.close();
         properties.push(searchValue, answer);
         rl.close();
     });
